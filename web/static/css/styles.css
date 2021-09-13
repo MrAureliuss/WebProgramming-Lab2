@@ -1,0 +1,367 @@
+@import "https://fonts.googleapis.com/css?family=Lato:100";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow: hidden;
+    font-size: 10px;
+    font-family: "Lato", Arial, fantasy;
+}
+
+button, input:focus {
+    outline: 0;
+}
+
+select {
+    border-radius: 10px;
+}
+
+input[type='text'] {
+    border: 2px solid #d0d1c7;
+}
+
+section {
+    overflow: hidden;
+    width: 100%;
+    height: 100vmax;
+    color: #fff;
+    background: linear-gradient(-45deg, #EE7752, #E73C73, #23A6D5, #23D5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: changeBack 10s ease-in-out infinite;
+}
+
+@keyframes changeBack {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* Rectangles */
+.headerRect {
+    position: fixed;
+    text-align: left;
+    top: 30%;
+    left: 50%;
+    margin-left: -230px;
+    margin-top: -8%;
+    width: 510px;
+    height: 150px;
+    mix-blend-mode: hard-light;
+    border-radius: 20px;
+    background-color: rgba(205, 205, 205, 0.85);
+    font-family: fantasy;
+    font-size: 24px;
+    color: white;
+}
+
+.contentRect {
+    position: fixed;
+    text-align: left;
+    top: 55%;
+    left: 50%;
+    margin-left: -462.5px;
+    margin-top: -10%;
+    width: 925px;
+    height: 417px;
+    mix-blend-mode: hard-light;
+    border-radius: 20px;
+    background-color: rgba(205, 205, 205, 0.85);
+}
+
+.footerRect {
+    position: fixed;
+    text-align: center;
+    padding: 10px 10px 10px 21px;
+    margin-left: -150px;
+    top: 92%;
+    left: 50%;
+    width: 300px;
+    height: 200px;
+    font-size: 18px;
+    font-family: Rockwell, fantasy;
+}
+
+.avatarRect {
+    position: fixed;
+    width: 140px;
+    height: 140px;
+    margin-top: 2px;
+    margin-left: 2%;
+    padding: 3px 10px 10px 10px;
+}
+
+.aboutMeRect {
+    position: absolute;
+    width: 400px;
+    height: 140px;
+    margin-top: 2px;
+    margin-left: 35%;
+    padding: 12px 10px 10px 10px;
+}
+
+.photoLinksRect {
+    position: absolute;
+    width: 400px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.baseInsideRect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    mix-blend-mode: hard-light;
+    padding: 10px 10px 10px 10px;
+    border-radius: 20px;
+    background-color: rgba(205, 205, 205, 0.85);
+    font-family: Rockwell, fantasy;
+    font-size: 18px;
+    color: black;
+}
+
+.baseLetter {
+    position: absolute;
+    padding: 3px;
+    font-family: Roboto Serif, fantasy;
+    font-size: 16px;
+}
+
+.baseInsideRect.taskRect {
+    margin-left: -400px;
+    margin-top: -170px;
+    width: 500px;
+    height: 70px;
+    text-align: center;
+}
+
+.baseInsideRect.taskPhoto {
+    margin-left: 150px;
+    margin-top: -170px;
+    width: 250px;
+    height: 250px;
+}
+
+/* Y */
+.baseInsideRect.yRect {
+    margin-left: -140px;
+    margin-top: -70px;
+    width: 240px;
+    height: 150px;
+
+    font-family: fantasy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.baseInsideRect.yRect > input {
+    font-size: 14px;
+    position: relative;
+    border-radius: 4px;
+    width: 100%;
+    height: 30%;
+    top: 40%;
+    mix-blend-mode: luminosity;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.baseLetter.yLetter {
+    margin-left: 100px;
+}
+
+
+/* X */
+.baseInsideRect.xRect {
+    margin-left: -400px;
+    margin-top: -70px;
+    width: 240px;
+    height: 150px;
+
+    font-family: fantasy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.baseInsideRect.xRect > input {
+    font-size: 14px;
+    position: relative;
+    border-radius: 4px;
+    width: 100%;
+    height: 30%;
+    top: 40%;
+    mix-blend-mode: luminosity;
+    vertical-align: middle;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* R */
+.baseInsideRect.rRect {
+    margin-left: -400px;
+    margin-top: 110px;
+    width: 500px;
+    height: 80px;
+}
+
+.baseLetter.rLetter {
+    margin-top: -10px;
+    margin-left: 240px;
+}
+
+/* Photos */
+.photo {
+    display: block;
+    width: 32px;
+    height: 32px;
+    transition: transform .2s; /* Animation */
+}
+
+.photo.vk {
+    background-image: url("../img/vklogo.png");
+    float: left;
+}
+
+.photo.github {
+    background-image: url("../img/githublogo.png");
+    float: left;
+    margin-left: 5px;
+}
+
+.photo.telegram {
+    background-image: url("../img/telegramlogo.png");
+    float: left;
+    margin-left: 5px;
+}
+
+.photo:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Select */
+
+.selectContainer {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.selectContainer select {
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 450px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    outline: none;
+}
+
+
+.selectContainer::before {
+    content: "\25be";
+    font-family: FontAwesome, fantasy;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+
+.selectContainer:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.selectContainer select option {
+    padding: 25px;
+}
+
+
+/* Button */
+.checkButton {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    margin-left: 640px;
+    margin-top: 340px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+
+    font-family: fantasy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    border: none;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+
+.checkButton:hover {
+    background-color: darkgrey;
+}
+
+.buttonLetter {
+    font-family: fantasy;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
+/* X buttons */
+
+.xButton {
+    width: 60px;
+    height: 20px;
+    font-size: 13px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.xButton.selected {
+    background-color: rgba(185, 185, 185, 0.85);
+    border-radius: 6px;
+}
+
+#tableButton {
+    margin: 30px 18px 10px;
+    height: 90px;
+}
