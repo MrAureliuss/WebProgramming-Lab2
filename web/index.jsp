@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>Вторая лабораторная работа по вебу</title>
   </head>
-  <body onload="changeXValue('0'); draw()">
+  <body onload="changeXValue('0'); draw(); redrawWithNewR()">
     <section>
       <table>
         <tr>
@@ -107,7 +107,7 @@
                 <div class="baseInsideRect rRect">
                   <span class="baseLetter rLetter">R</span>
                   <div class="selectContainer">
-                    <select id="select" name="select" onchange="update()">
+                    <select id="select" name="select" onchange="clearCanvas(); redrawWithNewR(); update()">
                       <option value="1" selected="selected">1</option>
                       <option value="1.5">1.5</option>
                       <option value="2">2</option>
@@ -122,16 +122,21 @@
                 </div>
 
                 <script>
-                  <% if (session.getAttribute("userPoints") != null) { %>
-                    <% ArrayList<Point> userPoints = (ArrayList<Point>) session.getAttribute("userPoints"); %>
-                    <% for(Point p: userPoints) { %>
-                      pointOldArc(
-                              <%=p.getX()%>,
-                              <%=p.getY()%>,
-                              <%=p.getR()%>
-                      );
+                  function redrawWithNewR() {
+                    let e = document.getElementById("select");
+                    let r = e.options[e.selectedIndex].value;
+
+                    <% if (session.getAttribute("userPoints") != null) { %>
+                      <% ArrayList<Point> userPoints = (ArrayList<Point>) session.getAttribute("userPoints"); %>
+                      <% for(Point p: userPoints) { %>
+                        pointOldArc(
+                                <%=p.getX()%>,
+                                <%=p.getY()%>,
+                                r
+                        );
+                      <% } %>
                     <% } %>
-                  <% } %>
+                  }
                 </script>
 
                 <button class="checkButton buttonLetter" type="submit">

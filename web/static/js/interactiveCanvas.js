@@ -11,6 +11,12 @@ function loadCtxURL(ctx) {
     canvasPic.onload = function() { ctx.drawImage(canvasPic, 0, 0) };
 }
 
+function clearCanvas() {
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
 
 function draw() {
     const canvas = document.getElementById('canvas');
@@ -31,7 +37,6 @@ function draw() {
                 x = Math.round(x / rConstLength * r);
                 y = (y / rConstLength * r).toFixed(5);
 
-                console.log(x);
                 if (contains([-5, -4, -3, -2, -1, 0, 1, 2, 3], x) && (-5 < y) && (y < 5)) {
                     const YField = document.getElementById('y');
                     YField.value = y;
